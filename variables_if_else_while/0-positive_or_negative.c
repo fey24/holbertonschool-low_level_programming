@@ -2,18 +2,26 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main() {
-srand(time(NULL));
-int n = rand() % (RAND_MAX + 1);
+/**
+ * main - print positive or negative
+ *
+ * Return: Always 0
+ */
 
-printf("The number %d is ", n);
+int main(void)
+{
+	int n;
 
-if (n > 0)
-printf("positive\n");
-else if (n == 0)
-printf("zero\n");
-else
-printf("negative\n");
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
 
-return 0;
+	if (n > 0)
+		printf("%d positive\n", n);
+	else if (n == 0)
+		printf("%d zero\n", n);
+	else
+		printf("%d negative\n", n);
+
+	return (0);
 }
+
