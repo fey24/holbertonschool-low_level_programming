@@ -1,24 +1,19 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
-/* negative et positive */
-int main(void)
-{
-	int n = rand() % (RAND_MAX + 1);
+int main() {
+srand(time(NULL));
+int n = rand() % (RAND_MAX + 1);
 
-	srand(time(NULL));
+printf("The number %d is ", n);
 
-	n = rand() - RAND_MAX / 2;
+if (n > 0)
+printf("positive\n");
+else if (n == 0)
+printf("zero\n");
+else
+printf("negative\n");
 
-	printf("The number %d is ", n);
-    
-    if (n > 0)
-        printf("positive\n");
-    else if (n == 0)
-        printf("zero\n");
-    else
-        printf("negative\n");
-    
-    return 0;
+return 0;
 }
